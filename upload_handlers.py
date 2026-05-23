@@ -145,9 +145,7 @@ async def callback_handler(client: Client, query: CallbackQuery):
     if cdata == "title_skip" and data.get("state") == "AWAITING_TITLE":
         title = data.get("file_name", "video")
         # Apply prefix/suffix if config has them
-        title = f"{
-            config.VIDEO_TITLE_PREFIX}{title}{
-            config.VIDEO_TITLE_SUFFIX}"
+        title = f"{config.VIDEO_TITLE_PREFIX}{title}{config.VIDEO_TITLE_SUFFIX}"
         update_user_data(user_id, title=title, state="AWAITING_DESC")
         await query.message.edit_text(f"Title skipped. Using: `{title}`")
         await prompt_description(query.message)
