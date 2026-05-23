@@ -1,0 +1,9 @@
+pyrogram~=2.0
+TgCrypto
+google-api-python-client
+google-auth-oauthlib
+google-auth-httplib2
+flask
+requests
+ffmpeg-python
+python-dotenv
