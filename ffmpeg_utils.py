@@ -12,9 +12,7 @@ def generate_thumbnail(video_path, output_dir="downloads"):
     """
     try:
         os.makedirs(output_dir, exist_ok=True)
-        thumbnail_path = os.path.join(
-            output_dir, f"thumb_{
-                uuid.uuid4().hex}.jpg")
+        thumbnail_path = os.path.join(output_dir, f"thumb_{uuid.uuid4().hex}.jpg")
 
         probe = ffmpeg.probe(video_path)
         duration = float(probe['format']['duration'])
